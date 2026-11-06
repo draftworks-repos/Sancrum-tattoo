@@ -1,0 +1,6 @@
+{
+  "name": "SANCTUM Tattoo Atelier",
+  "description": "Premium modern tattoo atelier specializing in fine line, black and grey realism, neo-traditional, and bespoke custom body art.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

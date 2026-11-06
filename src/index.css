@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #101B2B;
+    --bg-secondary: #19283B;
+    --bg-card: #223248;
+    --text-primary: #F4F1E9;
+    --text-secondary: #AEB9C7;
+    --accent: #D99A70;
+    --accent-hover: #E3AA83;
+    --border-subtle: rgba(255, 255, 255, 0.10);
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, .font-serif-display {
+    font-family: 'Cinzel', serif;
+    letter-spacing: -0.01em;
+  }
+
+  button, 
+  a, 
+  [role="button"],
+  input[type="button"],
+  input[type="submit"],
+  select,
+  summary {
+    cursor: pointer !important;
+  }
+
+  button:not(:disabled),
+  input[type="button"],
+  input[type="submit"] {
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  }
+
+  button:not(:disabled):hover,
+  input[type="button"]:hover,
+  input[type="submit"]:hover {
+    transform: translateY(-1px);
+  }
+
+  button:not(:disabled):active,
+  input[type="button"]:active,
+  input[type="submit"]:active {
+    transform: translateY(0) scale(0.98);
+  }
+}
+
+/* Custom scrollbar for carousels and page */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #101B2B;
+}
+::-webkit-scrollbar-thumb {
+  background: #223248;
+  border-radius: 9999px;
+  border: 2px solid #101B2B;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D99A70;
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Marquee infinite scroll */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
